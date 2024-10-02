@@ -1,0 +1,41 @@
+---
+title: "Beginner's Guide to Quarto Presentations"
+author: "Caitlin Wei"
+date: "2024-10-02"
+format:
+  revealjs:
+    slide-level: 2
+    theme: white
+    transition: slide
+    scrollable: true
+    code-line-numbers: true
+    embed-resources: true
+    footer: "Footer text"
+editor:
+  render-on-save: true
+---
+
+
+# Exploratory Data Analysis
+
+
+
+# Overview of GDP Per Capita
+
+- GDP per capita varies across countries.
+- Significant disparities in economic performance.
+
+
+
+# Life Expectancy Insights
+
+- Life expectancy tends to be higher in countries with higher GDP per capita.
+- Countries with lower GDP per capita have a lower life expectancy.
+
+![](assignment5_qtm_files/figure-html/cell-4-output-3.png)
+
+# Conclusion
+
+- Economic performance and health indicators are closely linked.
+- Further research is needed to understand the full impact of GDP on health metrics.
+

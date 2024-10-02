@@ -1,0 +1,72 @@
+
+---
+title: "Assignment 5 EDA"
+author: "Caitlin Wei"
+date: "2024-10-02"
+format:
+  pdf: default
+  html: default
+bibliography: references1.bib
+---
+
+Load the dataset using your preferred programming language (R or Python). 
+```{python}
+import pandas as pd
+
+# Load the dataset
+df = pd.read_csv("wdi.csv")
+
+# Show the first few rows of the dataset
+df.head()
+
+```
+
+Conduct exploratory data analysis on at least three indicators of your choice. Summarise your findings in markdown sections. Show your code and results.
+
+```{python}
+# Descriptive statistics for selected indicators
+gdp_per_capita_stats = df['gdp_per_capita'].describe()
+life_expectancy_stats = df['life_expectancy'].describe()
+inflation_rate_stats = df['inflation_rate'].describe()
+
+gdp_per_capita_stats, life_expectancy_stats, inflation_rate_stats
+
+```
+
+Create at least two different types of plots (e.g., bar chart, scatter plot) to represent your analysis. Use Quarto code chunks to embed these visualisations. Add a title and axis labels to each plot. Use Quarto to include a caption and a reference to the source of the data. Hide your code in the final document.
+
+```{python}
+import matplotlib.pyplot as plt
+
+# Bar chart for GDP per capita
+plt.figure(figsize=(8,5))
+df.plot(kind='bar', x='country', y='gdp_per_capita', legend=False, color='skyblue')
+plt.title('GDP Per Capita by Country')
+plt.xlabel('Country')
+plt.ylabel('GDP Per Capita (USD)')
+plt.show()
+
+# Scatter plot for Life Expectancy vs GDP per Capita
+plt.figure(figsize=(8,5))
+plt.scatter(df['gdp_per_capita'], df['life_expectancy'], color='green')
+plt.title('Life Expectancy vs GDP Per Capita')
+plt.xlabel('GDP Per Capita (USD)')
+plt.ylabel('Life Expectancy (Years)')
+plt.show()
+
+```
+
+
+Construct a table that highlights some key statistics from your analysis. Ensure the table is well-formatted and included in the report.
+
+```{python}
+# Table with key statistics
+summary_table = df[['gdp_per_capita', 'life_expectancy', 'inflation_rate']].describe()
+summary_table
+
+```
+
+As shown in **Figure 1**, the GDP per capita varies widely across countries. **Table 1** summarizes the key statistics for GDP per capita, life expectancy, and inflation rate.
+
+see references [@zaman2017association]
+
